@@ -1,0 +1,10 @@
+﻿var inputFileDescription = new CsvFileDescription
+            {
+                SeparatorChar = ',',
+                FirstLineHasColumnNames = true,
+                EnforceCsvColumnAttribute = true
+            };
+            var csvContext = new CsvContext();
+
+            var reader = new StreamReader(inputStream);
+            return csvContext.Read<T>(reader, inputFileDescription);

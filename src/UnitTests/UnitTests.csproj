@@ -66,9 +66,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="ControllerSpecs\ContactUploadSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceSpecs\UploadServiceSpecs.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contax.Web.UI\Contax.Web.UI.csproj">

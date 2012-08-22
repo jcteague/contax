@@ -1,6 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 using Contax.Web.UI.Controllers;
+using Contax.Web.UI.Domain;
 using Contax.Web.UI.Services;
 using Machine.Specifications;
 using developwithpassion.specifications.rhinomocks;
@@ -32,7 +33,7 @@ namespace UnitTests.ControllerSpecs
     {
         Establish context = () => contact_file_service
                                       .Stub(x => x.Upload(http_file.InputStream))
-                                      .Return(new ServiceResult { Success = true });
+                                      .Return(new ServiceResult<Contact> { Success = true });
 
         It should_return_the_success_view_when_upload_succeeded =
             () => action_result.ViewName.ShouldEqual("UploadCompleted");
@@ -41,7 +42,7 @@ namespace UnitTests.ControllerSpecs
     public class when_the_service_does_not_parse_the_upload_file : ContactUploadSpecs {
         Establish context = () => contact_file_service
                                       .Stub(x => x.Upload(http_file.InputStream))
-                                      .Return(new ServiceResult { Success = false, ErrorMessages = new[] { "Error" } });
+                                      .Return(new ServiceResult<Contact> { Success = false, ErrorMessages = new[] { "Error" } });
 
         Because of = () => action_result = (ViewResult)sut.Upload(http_file);
         It should_return_empty_view_name = () => action_result.ViewName.ShouldBeEmpty();
