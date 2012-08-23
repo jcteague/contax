@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="ControllerSpecs\ContactUploadSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceSpecs\CvsParserSpecs.cs" />
     <Compile Include="ServiceSpecs\UploadServiceSpecs.cs" />
   </ItemGroup>
   <ItemGroup>

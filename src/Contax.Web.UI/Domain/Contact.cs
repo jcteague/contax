@@ -13,6 +13,7 @@ namespace Contax.Web.UI.Domain
         public string FacebookUserName { get; set; }
         public string TwitterUserName { get; set; }
 
+        
     }
 
     public class ContactCsvMap : CsvClassMap<Contact>
@@ -21,6 +22,8 @@ namespace Contax.Web.UI.Domain
         {
             Map(c => c.FirstName).Name("First Name");
             Map(c => c.LastName).Name("Last Name");
+            Map(c => c.Email);
+            Map(c => c.PhoneNumber);
             Map(c => c.FacebookUserName).Name("facebook");
             Map(c => c.TwitterUserName).Name("twitter");
         }
