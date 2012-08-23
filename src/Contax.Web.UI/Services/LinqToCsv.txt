@@ -8,3 +8,17 @@
 
             var reader = new StreamReader(inputStream);
             return csvContext.Read<T>(reader, inputFileDescription);
+
+
+public class ContactCsvMap : CsvClassMap<Contact>
+    {
+        public ContactCsvMap()
+        {
+            Map(c => c.FirstName).Name("First Name");
+            Map(c => c.LastName).Name("Last Name");
+            Map(c => c.Email);
+            Map(c => c.PhoneNumber);
+            Map(c => c.FacebookUserName).Name("facebook");
+            Map(c => c.TwitterUserName).Name("twitter");
+        }
+    }

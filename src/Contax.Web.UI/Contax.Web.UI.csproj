@@ -113,8 +113,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IContactRepository.cs" />
+    <Compile Include="Services\IParseFiles.cs" />
     <Compile Include="Services\IUploadContacts.cs" />
     <Content Include="Services\LinqToCsv.txt" />
+    <Compile Include="Services\CsvParser.cs" />
     <Compile Include="Services\ServiceResult.cs" />
   </ItemGroup>
   <ItemGroup>

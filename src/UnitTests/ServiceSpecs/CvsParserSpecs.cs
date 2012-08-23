@@ -10,7 +10,7 @@ using System.Linq;
 
 namespace UnitTests.ServiceSpecs
 {
-    public class CvsParserSpecs : Observes<Parser>
+    public class CvsParserSpecs : Observes<CsvParser>
     {
         public class CsvParseTestModel
         {
